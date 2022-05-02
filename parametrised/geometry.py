@@ -1,8 +1,10 @@
 import math
 import numpy as np
 
+PI = 3.1416
 
-def define_pts(theta=20 / 180 * 3.1416, alpha=15 / 180 * 3.1416, size=0.2, thickness=0.02, extension=0.25):
+
+def define_pts(theta=20 / 180 * PI, alpha=15 / 180 * PI, size=0.2, thickness=0.02, extension=0.25):
     # Outer contour
     pts_outer = np.array([
         [size, size],
