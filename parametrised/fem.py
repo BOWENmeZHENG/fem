@@ -1,3 +1,4 @@
+import numpy as np
 import pygmsh
 
 
@@ -51,3 +52,12 @@ def write_files(mesh, E=1.0e8, nu=0.3, load=-20.0e3):
         for i, point in enumerate(mesh_pts):
             if point[1] == max(mesh_pts[:, 1]):
                 f_loads.write(f"{i:4} {0.0:8.4f} {load:8.4f} \n")
+
+
+def nodes_interested(mesh):
+    mesh_pts = mesh.points
+    id_up = np.argmax(mesh_pts[:, 1])
+    id_right = np.argmax(mesh_pts[:, 0])
+    id_left = np.argmin(mesh_pts[:, 0])
+
+    return id_up, id_right, id_left
