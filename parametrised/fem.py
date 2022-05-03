@@ -19,20 +19,6 @@ def meshing(pts_outer, pts_inner, ext_1, ext_2, ext_3, ext_4, inside_up, inside_
              geom.add_polygon(ext_4)
              ]
         )
-        # parts = [outer,
-        #          geom.add_polygon(ext_1),
-        #          geom.add_polygon(ext_2),
-        #          geom.add_polygon(ext_3),
-        #          geom.add_polygon(ext_4)]
-        # geom.boolean_union(
-        #     [
-        #         geom.boolean_difference(
-        #             geom.boolean_union(parts),
-        #             geom.add_polygon(pts_inner)
-        #         ),
-        #         geom.boolean_union([geom.add_polygon(inside_up), geom.add_polygon(inside_down)])
-        #     ]
-        # )
         mesh = geom.generate_mesh()
     return mesh
 
